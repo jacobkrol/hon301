@@ -1,0 +1,227 @@
+<html>
+
+<title>HON 301 Presentation</title>
+
+<style>
+body {
+    background: #BBF;
+    font-family: monospace;
+    margin: 0;
+    color: #003;
+}
+
+h1, h2, h3, ul {
+    font-family: Arial;
+}
+
+ul {
+    line-height: 2;
+}
+
+h3 {
+    font-weight: normal;
+}
+
+.indent {
+    padding-left: 30px;
+}
+
+.hl {
+    width: 80%;
+    border: 1px solid #225;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('./uic-background.jpg');
+    background-size: cover;
+	background-position: top center;
+	background-attachment: fixed;
+    width: 100%;
+    z-index: -2;
+    margin: 0;
+    height: 50%;
+    text-align: center;
+}
+
+.hidden {
+    padding-left: 30px;
+    display: none;
+}
+
+#nav {
+    padding: 0;
+    margin: 0;
+    background: #558;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: visible;
+}
+
+#nav li {
+    display: table;
+    float: left;
+}
+
+#nav a {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 15px 25px;
+}
+
+#nav a:hover {
+    background: #225;
+    border-bottom: 2px solid red;
+    padding-bottom: 13px;
+}
+
+#menu-box {
+    float: right;
+    margin-right: 15px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+input {
+    font-size: 24px;
+    padding: 2px;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+input[type="button"] {
+    padding: 2px 10px;
+}
+</style>
+
+<script>
+
+window.onload = function() {
+    // console.log("ran");
+    document.getElementById("sum1").style.display = "none";
+    document.getElementById("sum2").style.display = "none";
+    document.getElementById("sum3").style.display = "none";
+}
+function sum1() {
+    // console.log("click");
+    let item = document.getElementById("sum1");
+    if(item.style.display == "none") {
+        item.style.display = "inline-block";
+    } else {
+        item.style.display = "none";
+    }
+}
+function sum2() {
+    // console.log("click");
+    let item = document.getElementById("sum2");
+    if(item.style.display == "none") {
+        item.style.display = "inline-block";
+    } else {
+        item.style.display = "none";
+    }
+}
+function sum3() {
+    // console.log("click");
+    let item = document.getElementById("sum3");
+    if(item.style.display == "none") {
+        item.style.display = "inline-block";
+    } else {
+        item.style.display = "none";
+    }
+}
+function ex1sub() {
+    let text = document.getElementById("ex1text");
+    let input = document.getElementById("ex1").value;
+    text.innerHTML = input;
+}
+
+</script>
+
+<body>
+    <div id="top"></div>
+    <ul id="nav">
+        <div id="menu-box">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#paper">Paper</a></li>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#capstone">Capstone</a></li>
+        </div>
+    </ul>
+    <header>
+        <h1 style="padding-top: 150px">HON 301 Research Presentation</h1>
+    </header>
+    <div class="indent" style="padding-top: 20px">
+        <div class="hl" id="paper"></div>
+        <h2>Paper:</h2>
+        <div class="indent">
+            <h3><i>Analysis of Web Application Code Vulnerabilities using Secure Coding Standards</i></h3>
+            <h3>Arabian Journal for Science & Engineering</h3>
+            <h3>February 1<sup>st</sup>, 2017</h3>
+        </div>
+        <div id="summary" class="hl"></div>
+        <h2>Summary:</h2>
+        <div class="indent">
+            <ul>
+                <li><a onclick="sum1()">Review of previous research</a></li>
+                <div id="sum1" class="hidden">
+                    <h3>Zhu et. al. [15] spotted that skilled developers underestimate secure programming practice which introduces programming vulnerabilities. The contribution of it is the static analysis of source code to mitigate the programming vulnerabilities through reminding and assisting developers at the development phase</h3>
+                    <h3>Woods and McGuirk [14] stated that written code snippet should handle all the expected and unexpected case scenarios. The aim of this paper is to encourage the programmer and minimize the risk of errors when processing real data</h3>
+                </div>
+                <li><a onclick="sum2()">Identifies potential coding issues</a></li>
+                <div id="sum2" class="hidden">
+                    <h3>First is the improper handling of language-specific functionalities, and second is the poor style of writing code which becomes code vulnerability</h3>
+                    <fieldset>
+                        <legend>Example 1:</legend>
+                        <code>
+                            let myVar1 = 5;<br>
+                            let myVar2 = "3";<br>
+                            <br>
+                            console.log( myVar1 + myVar2 );
+                        </code>
+                    </fieldset>
+                    <h3>Second is the poor style of writing code which becomes code vulnerability</h3>
+                    <fieldset>
+                        <legend>Example 2:</legend>
+                        <input type="text" id="ex1" placeholder="First Name" />
+                        <input type="button" id="ex1sub" value="Submit" onclick="ex1sub()" />
+                        <h3 style="padding-left: 15px">Received Input: <span id="ex1text"></span></h3>
+                    </fieldset>
+                </div>
+                <li><a onclick="sum3()">Introduces new tools to fix this problem</a></li>
+                <div id="sum3" class="hidden">
+                    <img src="./alg1.png" />
+                    <img src="./alg2.png" />
+                </div>
+            </ul>
+        </div>
+        <div id="capstone" class="hl"></div>
+        <h2>Capstone Connection:</h2>
+        <div class="indent">
+            <ul>
+                <li><b>User Interfaces</b></li>
+                <li><b>JavaScript Modernization</b></li>
+                <li><b>Security Today</b></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
