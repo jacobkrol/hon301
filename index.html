@@ -24,6 +24,8 @@ h3 {
 
 .indent {
     padding-left: 30px;
+    z-index: 4;
+    background: #BBF;
 }
 
 .hl {
@@ -110,6 +112,14 @@ input {
 input[type="button"] {
     padding: 2px 10px;
 }
+
+#title-card {
+    padding-top: 275px;
+    background: rgba(240,240,240,0.3);
+    height: 100%;
+    z-index: -4;
+    overflow: hidden;
+}
 </style>
 
 <script>
@@ -166,7 +176,11 @@ function ex1sub() {
         </div>
     </ul>
     <header>
-        <h1 style="padding-top: 150px">HON 301 Research Presentation</h1>
+        <div id="title-card">
+            <h1>HON 301 Research Presentation</h1>
+            <div class="hl" style="width: 40%"></div>
+            <h1>Jacob Krol</h1>
+        </div>
     </header>
     <div class="indent" style="padding-top: 20px">
         <div class="hl" id="paper"></div>
